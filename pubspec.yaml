@@ -1,0 +1,47 @@
+name: task_app
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.3 <4.0.0"
+# Dependencies specify other packages that your package needs in order to work.
+dependencies:
+  cupertino_icons: ^1.0.6
+  flutter:
+    sdk: flutter
+  intl: ^0.19.0
+  lottie: ^3.1.0
+  path: ^1.9.0
+  sqflite: ^2.3.3
+  animated_floating_buttons: ^0.0.2
+
+dev_dependencies:
+  # The "flutter_lints" package below contains a set of recommended lints to
+  flutter_lints: ^3.0.0
+  flutter_test:
+    sdk: flutter
+
+# following page: https://dart.dev/tools/pub/pubspec
+flutter:
+  uses-material-design: true
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/img/
+    - assets/lottie/
+
+  #   - images/a_dot_ham.jpeg
+
+  fonts:
+    - family: Staatliches
+      fonts:
+        - asset: fonts/Staatliches-Regular.ttf
+    - family: Oxygen
+      fonts:
+        - asset: fonts/Oxygen-Regular.ttf
+    - family: Jersey20
+      fonts:
+        - asset: fonts/Jersey20-Regular.ttf
