@@ -17,13 +17,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  final List<Color> lightColors = [
+  final List<Color> colors = [
     Colors.amber.shade300,
     Colors.lightGreen.shade300,
     Colors.lightBlue.shade300,
     Colors.orange.shade300,
     Colors.pinkAccent.shade100,
     Colors.tealAccent.shade100,
+    Colors.grey.shade300,
   ];
   
   List<Task> tasks = [];
@@ -48,6 +49,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -103,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                                   horizontal: 15, vertical: 5),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(6),
-                                  color: lightColors[index],
+                                  color: colors[index % colors.length],
                                   boxShadow: const [
                                     BoxShadow(
                                       color: Colors.black,
