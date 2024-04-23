@@ -49,36 +49,37 @@ class _DetailTaskState extends State<DetailTask> {
         child: FloatingActionButton(
           onPressed: () {
             showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text('Delete task',
-                        style: TextStyle(color: Colors.black)),
-                    content: const Text('Are you sure?',
-                        style: TextStyle(color: Colors.black)),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text('Cancel',
-                            style: TextStyle(color: Colors.black)),
-                      ),
-                      TextButton(
-                        onPressed: () async {
-                          await LocalDatabase().deleteTask(widget.task.id!);
-                          // ignore: use_build_context_synchronously
-                          Navigator.pushReplacement(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const MyApp();
-                          }));
-                        },
-                        child: const Text('Delete',
-                            style: TextStyle(color: Colors.red)),
-                      ),
-                    ],
-                  );
-                });
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: const Text('Delete task',
+                      style: TextStyle(color: Colors.black)),
+                  content: const Text('Are you sure?',
+                      style: TextStyle(color: Colors.black)),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text('Cancel',
+                          style: TextStyle(color: Colors.black)),
+                    ),
+                    TextButton(
+                      onPressed: () async {
+                        await LocalDatabase().deleteTask(widget.task.id!);
+                        // ignore: use_build_context_synchronously
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const MyApp();
+                        }));
+                      },
+                      child: const Text('Delete',
+                          style: TextStyle(color: Colors.red)),
+                    ),
+                  ],
+                );
+              },
+            );
           },
           shape: const CircleBorder(),
           backgroundColor: Colors.red,
@@ -108,6 +109,7 @@ class _DetailTaskState extends State<DetailTask> {
               color: Colors.green,
             ),
           ),
+          const SizedBox(width: 16),
         ],
       ),
       body: ListView(

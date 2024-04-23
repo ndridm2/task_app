@@ -78,6 +78,7 @@ class _HomePageState extends State<HomePage> {
               color: Colors.green,
             ),
           ),
+          const SizedBox(width: 10),
         ],
       ),
       body: isLoading
