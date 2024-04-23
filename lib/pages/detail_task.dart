@@ -137,7 +137,7 @@ class _DetailTaskState extends State<DetailTask> {
       floatingActionButton: AnimatedFloatingActionButton(
           fabButtons: <Widget>[float1(), float2()],
           key: key,
-          colorStartAnimation: Colors.blueGrey,
+          colorStartAnimation: Colors.white,
           colorEndAnimation: Colors.white,
           animatedIconData: AnimatedIcons.menu_close),
     );

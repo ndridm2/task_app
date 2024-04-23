@@ -74,7 +74,8 @@ class _EditTaskState extends State<EditTask> {
               }
             },
             icon: const Icon(Icons.done, color: Colors.green),
-          )
+          ),
+          const SizedBox(width: 10),
         ],
       ),
       body: Form(

@@ -62,6 +62,7 @@ class _AddTaskState extends State<AddTask> {
               color: Colors.green,
             ),
           ),
+          const SizedBox(width: 10),
         ],
       ),
       body: Form(
