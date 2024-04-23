@@ -13,6 +13,15 @@ class SearchTask extends StatefulWidget {
 }
 
 class _SearchTaskState extends State<SearchTask> {
+  final List<Color> lightColors = [
+    Colors.amber.shade300,
+    Colors.lightGreen.shade300,
+    Colors.lightBlue.shade300,
+    Colors.orange.shade300,
+    Colors.pinkAccent.shade100,
+    Colors.tealAccent.shade100,
+  ];
+
   List<Task> tasks = [];
 
   final searchController = TextEditingController();
@@ -68,8 +77,10 @@ class _SearchTaskState extends State<SearchTask> {
                   contentPadding: EdgeInsets.all(16),
                   border: InputBorder.none,
                   hintText: 'Search Task',
-                  suffixIcon: Icon(Icons.search, color: Colors.blue,)
-              ),
+                  suffixIcon: Icon(
+                    Icons.search,
+                    color: Colors.blue,
+                  )),
               onChanged: (value) => searchTasks(value),
               onSubmitted: (value) {
                 setState(() => isLoading = true);
@@ -103,7 +114,7 @@ class _SearchTaskState extends State<SearchTask> {
                                         horizontal: 15, vertical: 5),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        color: Colors.blue,
+                                        color: lightColors[index],
                                         boxShadow: const [
                                           BoxShadow(
                                             color: Colors.black,
@@ -117,7 +128,8 @@ class _SearchTaskState extends State<SearchTask> {
                                           DateFormat(DateFormat.ABBR_MONTH)
                                               .format(tasks[index].createdAt),
                                           style: const TextStyle(
-                                              color: Colors.white70),
+                                              color: Colors.black87,
+                                              fontWeight: FontWeight.w600),
                                         ),
                                         const SizedBox(height: 3),
                                         Text(
@@ -127,15 +139,17 @@ class _SearchTaskState extends State<SearchTask> {
                                               .textTheme
                                               .titleLarge
                                               ?.copyWith(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold),
+                                                color: Colors.black87,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                         ),
                                         const SizedBox(height: 3),
                                         Text(
                                           DateFormat(DateFormat.YEAR)
                                               .format(tasks[index].createdAt),
                                           style: const TextStyle(
-                                              color: Colors.white70),
+                                              color: Colors.black87,
+                                              fontWeight: FontWeight.w600),
                                         ),
                                       ],
                                     ),

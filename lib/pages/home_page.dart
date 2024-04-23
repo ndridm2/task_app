@@ -1,3 +1,6 @@
+
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:task_app/data/databases/local_database.dart';
@@ -9,12 +12,23 @@ import 'package:task_app/pages/widgets/notask_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
+  
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+
+  final List<Color> lightColors = [
+    Colors.amber.shade300,
+    Colors.lightGreen.shade300,
+    Colors.lightBlue.shade300,
+    Colors.orange.shade300,
+    Colors.pinkAccent.shade100,
+    Colors.tealAccent.shade100,
+  ];
+  
   List<Task> tasks = [];
 
   bool isLoading = false;
@@ -91,8 +105,8 @@ class _HomePageState extends State<HomePage> {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 15, vertical: 5),
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.blue,
+                                  borderRadius: BorderRadius.circular(6),
+                                  color: lightColors[index],
                                   boxShadow: const [
                                     BoxShadow(
                                       color: Colors.black,
@@ -106,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                                     DateFormat(DateFormat.ABBR_MONTH)
                                         .format(tasks[index].createdAt),
                                     style:
-                                        const TextStyle(color: Colors.white70),
+                                        const TextStyle(color: Colors.black87, fontWeight: FontWeight.w600),
                                   ),
                                   const SizedBox(height: 3),
                                   Text(
@@ -116,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                                         .textTheme
                                         .titleLarge
                                         ?.copyWith(
-                                            color: Colors.white,
+                                            color: Colors.black87,
                                             fontWeight: FontWeight.bold),
                                   ),
                                   const SizedBox(height: 3),
@@ -124,7 +138,7 @@ class _HomePageState extends State<HomePage> {
                                     DateFormat(DateFormat.YEAR)
                                         .format(tasks[index].createdAt),
                                     style:
-                                        const TextStyle(color: Colors.white70),
+                                        const TextStyle(color: Colors.black87, fontWeight: FontWeight.w600),
                                   ),
                                 ],
                               ),
