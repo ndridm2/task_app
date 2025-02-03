@@ -17,5 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 Screenshoot
 
-![Frame 3](https://github.com/ndridm2/task_app/assets/64353589/3a6ae074-c7d3-4ee9-ac79-4c68b4b3f595)
-
+<img width="350" alt="task app" src="https://github.com/ndridm2/task_app/assets/64353589/3a6ae074-c7d3-4ee9-ac79-4c68b4b3f595">
